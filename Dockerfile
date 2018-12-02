@@ -17,7 +17,7 @@ ARG APP_DIR="/app"
 ARG USER_ID=1000
 
 ENV NPM_CONFIG_LOGLEVEL warn
-#angular-cli rc0 crashes with .angular-cli.json in user home
+#angular-cli rc0 crashes with .angular-cli.json in user homex
 ENV HOME "$USER_HOME_DIR"
 
 # npm 5 uses different userid when installing packages, as workaround su to node when installing
