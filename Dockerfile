@@ -29,7 +29,7 @@ RUN set -xe \
     && chown $USER_ID $USER_HOME_DIR \
     && chmod a+rw $USER_HOME_DIR \
     && chown -R node /usr/local/lib /usr/local/include /usr/local/share /usr/local/bin \
-    && su node -c "apt-get install lftp" \
+    && su root -c "apt-get update; apt-get install lftp" \
     && (cd "$USER_HOME_DIR"; su node -c "npm install -g @angular/cli@$NG_CLI_VERSION; npm install -g yarn; chmod +x /usr/local/bin/yarn; npm cache clean --force")
 
 #not declared to avoid anonymous volume leak
